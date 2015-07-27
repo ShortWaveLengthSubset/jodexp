@@ -22,14 +22,14 @@ function compile(str, path) {
 
 // view engine setup
 // removed path.join(__dirname, 'pathname')
-app.set('views', __dirname + '/views')
+app.set('views', path.join(__dirname, 'views')
 app.set('view engine', 'jade')
 app.use(stylus.middleware(
-  { src: __dirname + '/public'
+  { src: path.join(__dirname, 'public')
     , compile:compile
   }
 ))
-app.use(express.static(__dirname + '/public'))
+app.use(express.static(path.join(__dirname, 'public')))
 
 // render the webpage through node
 app.get('/', function (req, res) {

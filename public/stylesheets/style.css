@@ -1,6 +1,5 @@
-/*
- * Import nib
- */
+*Import: nib;
+*
 /*
  * Grab a custom font from Google
  */
@@ -104,13 +103,15 @@ a img {
  * background color as variables
  */
 body {
+  padding: 30px;
   font-family: 'Georgia';
-  background-color: #faf9f0;
+  background: none repeat scroll left top;
+  background-color: #d3d3d3;
   color: #444;
 }
 header {
   font-family: 'Quicksand';
-  padding: 50px 10px;
+  padding: 30px 10px;
   color: #fff;
   font-size: 25px;
   text-align: center;
@@ -122,57 +123,76 @@ header {
   border-bottom: 1px solid #0047b3;
   text-shadow: 0px -1px 0px #0047b3;
 }
-.container {
-  width: 500px;
-  margin: 50px auto;
-  overflow: hidden;
+.search {
+  padding: 10px;
 }
-.main-content {
-  float: left;
-  width: 300px;
+.results {
+  padding: 40px;
 }
-.main-content p {
-  margin-bottom: 20px;
-}
-.sidebar {
-  float: left;
-  width: 200px;
-}
-.sidebar .widget {
-/*
-     * Note the lack of vendor
-     * prefixes here. Nib will
-     * add them for us
-     */
+.poster {
   -webkit-border-radius: 3px;
   border-radius: 3px;
-  border: 1px solid #ccc;
-  margin-left: 20px;
-  background-color: #faf9f0;
-  -webkit-box-shadow: inset 0px 0px 0px 3px rgba(255,255,255,0.8), 0px 3px 0px -2px rgba(0,0,0,0.1);
-  box-shadow: inset 0px 0px 0px 3px rgba(255,255,255,0.8), 0px 3px 0px -2px rgba(0,0,0,0.1);
+  height: 500;
+  padding-top: 20px;
 }
-.sidebar .widget h1 {
-  font-family: 'Quicksand';
-  margin: 13px 10px 4px;
-  padding-bottom: 10px;
-  border-bottom: 1px dotted #ddd;
-  -webkit-border-radius: 2px 2px 0px 0px;
-  border-radius: 2px 2px 0px 0px;
-  margin-bottom: 10px;
+.image {
+  position: relative;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  width: 300;
+  height: 450;
+  vertical-align: middle;
 }
-.sidebar .widget p {
-  font-size: 13px;
-  padding: 0px 10px;
-  margin-bottom: 10px;
+.image .text {
+  position: absolute;
+  top: 0em;
+  padding: 10px;
+  width: 300px;
+  text-align: left;
+  visibility: hidden;
+  color: #fff;
 }
-p {
-  line-height: 1.8;
+.image .overlay {
+  position: absolute;
+  top: 0em;
+  background: rgba(0,0,0,0.85);
+  visibility: hidden;
+  -webkit-transition: opacity 1s ease;
+  -moz-transition: opacity 1s ease;
+  -o-transition: opacity 1s ease;
+  -ms-transition: opacity 1s ease;
+  transition: opacity 1s ease;
+  width: 300px;
+  height: 450px;
 }
-footer {
-  width: 500px;
-  margin: 50px auto;
-  border-top: 1px dotted #ccc;
-  padding-top: 5px;
-  font-size: 13px;
+.image:hover .overlay {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+  visibility: visible;
 }
+.image:hover .text {
+  visibility: visible;
+}
+/* deprecated style
+
+  /*.image:hover overlay
+  box-shadow:inset 1px 1px 40px 0
+  position relative
+  position -450
+  width 300
+  height 450
+  color:rbga 255 255 255 .85*/
+/*.overlay
+  width 300
+  height 450
+  color:rbga 255 255 255 .85*/
+/*.poster:hover .overlay
+  width 300
+  height 450
+  color:rbga 255 255 255 .85*/
+/*.poster:hover .image
+  box-shadow:inset 1px 1px 40px 0
+  width 300
+  height 450
+  color:rbga 255 255 255 .85*/
